@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eshi App - Learn English, Your Way</title>
+    <meta name="description" content="Eshi is a personalized, AI-powered English learning app. Find your level, get daily lessons, and track your mastery with advanced progress tracking.">
+    <meta name="keywords" content="learn English, English learning app, AI language learning, English proficiency, CEFR levels, English practice">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container">
+            <a href="#" class="logo">
+                <img src="../assests/Eshi-app Logo with Deep Blue and Gold (Website).png" alt="Eshi App Logo">
+            </a>
+            <div class="nav-right-group"> 
+                <nav class="nav-menu">
+                    <ul>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#how-it-works">How It Works</a></li>
+                        <li><a href="#subscribe">Subscribe</a></li>
+                    </ul>
+                </nav>
+                <a href="#subscribe" class="btn btn-primary nav-btn">Get Started</a>
+            </div> 
+            <button class="hamburger">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <p class="hero-brand-name">Eshi App</p> <h1>Learn English, Your Way. Powered by AI.</h1>
+                 <p>Unlock your potential with personalized lessons tailored to your proficiency level. Eshi makes mastering English intuitive, engaging, and effective.</p>
+    <a href="#subscribe" class="btn btn-secondary">Subscribe for updates</a>
+                </div>
+                <div class="hero-image">
+                    <img src="../assests/man using the app.eshi.png" alt="Man smiling while using the Eshi language learning app on his phone">
+                </div>
+            </div>
+        </section>
+
+        <section id="how-it-works" class="how-it-works">
+            <div class="container">
+                <h2>Your Personalized Path to English In 3 Steps</h2>
+                <div class="steps-grid">
+                    <div class="step-card">
+                        <div class="icon-wrapper"><i class="fas fa-bullseye"></i></div>
+                        <h3>Step 1: Find Your Level</h3>
+                        <p>Our AI analyzes your skills to pinpoint your exact CEFR proficiency level.</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="icon-wrapper"><i class="fas fa-book-open-reader"></i></div>
+                        <h3>Step 2: Get Daily Lessons</h3>
+                        <p>Receive articles, quizzes, and tasks perfectly matched to your learning needs.</p>
+                    </div>
+                    <div class="step-card">
+                        <div class="icon-wrapper"><i class="fas fa-chart-line"></i></div>
+                        <h3>Step 3: Practice & Track Mastery</h3>
+                        <p>Our smart tracking system shows your progress in real-time as your skills grow.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="features">
+            <div class="container">
+                <h2>A Smarter Way to Master a language</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <img src="../assests/Your personal AI Tutor.png" alt="App screenshot showing the AI Tutor feature">
+                        <h4>Your Personal AI Tutor</h4>
+                    </div>
+                    <div class="feature-card">
+                        <img src="../assests/Progress tracking.png" alt="App screenshot showing advanced progress tracking graphs">
+                        <h4>Advanced Progress Tracking</h4>
+                    </div>
+                    <div class="feature-card">
+                        <img src="../assests/all 4 skills in one copy.png" alt="App screenshot showing all 4 skills">
+                        <h4>All 4 skills in one</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="subscribe" class="cta">
+            <div class="container">
+                <h2>Ready to Transform Your English Skills?</h2>
+                <p>Be the first to know when Eshi launches. Subscribe for exclusive updates and early access.</p>
+                <form name="subscribe" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="subscribe-form">
+                    <input type="hidden" name="form-name" value="subscribe" />
+                    <p class="hidden">
+                        <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+                    </p>
+                    <input type="email" name="email" placeholder="Enter your email address" required>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <a href="#" class="footer-logo">
+                    <img src="../assests/Eshi-app Logo with Deep Blue and Gold.png" alt="Eshi App Logo">
+                </a>
+                <nav class="footer-nav">
+                    <a href="#">About Us</a>
+                    <a href="#">Contact</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </nav>
+                <div class="footer-socials">
+                    <p>Copyright © 2025 Eshi App</p>
+                    <div class="social-icons">
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

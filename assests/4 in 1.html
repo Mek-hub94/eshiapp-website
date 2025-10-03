@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eshi Four Skills in One</title>
+    <style>
+        :root {
+            --deep-blue: #1A233A;
+            --gold: #C5A56D;
+            --light-cream: #F5EFE1;
+            --off-white: #FDFBF6;
+            --dark-text: #333333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: linear-gradient(135deg, var(--light-cream) 0%, var(--off-white) 100%);
+            padding: 2rem;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .showcase-container {
+            width: 400px;
+            height: 400px;
+            background: var(--off-white);
+            border-radius: 25px;
+            box-shadow: 0 20px 40px rgba(26, 35, 58, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .phone-mockup {
+            background: var(--deep-blue);
+            border-radius: 20px;
+            padding: 0.8rem;
+            margin: 1rem;
+            height: calc(100% - 2rem);
+            position: relative;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+
+        .phone-mockup::before {
+            content: '';
+            position: absolute;
+            top: 0.4rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background: var(--gold);
+            border-radius: 2px;
+            z-index: 10;
+        }
+
+        .screen {
+            background: var(--off-white);
+            border-radius: 15px;
+            height: 100%;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            background: var(--light-cream);
+            padding: 0.8rem;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .header-title {
+            color: var(--deep-blue);
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        .header-subtitle {
+            color: var(--dark-text);
+            font-size: 0.75rem;
+            opacity: 0.8;
+            margin-top: 0.2rem;
+        }
+
+        .skills-container {
+            flex: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            padding: 0.5rem;
+            gap: 0.5rem;
+        }
+
+        .skill-section {
+            background: white;
+            border-radius: 12px;
+            padding: 0.8rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            border: 2px solid var(--light-cream);
+        }
+
+        .skill-section:hover {
+            border-color: var(--gold);
+            transform: scale(1.02);
+            transition: all 0.2s ease;
+        }
+
+        .skill-header {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .skill-icon {
+            width: 24px;
+            height: 24px;
+            background: var(--deep-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            color: var(--off-white);
+        }
+
+        .skill-title {
+            color: var(--deep-blue);
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
+        .skill-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* Reading Section */
+        .reading-content {
+            text-align: center;
+        }
+
+        .mini-article {
+            background: var(--light-cream);
+            padding: 0.4rem;
+            border-radius: 6px;
+            font-size: 0.65rem;
+            color: var(--dark-text);
+            line-height: 1.3;
+            margin-bottom: 0.4rem;
+        }
+
+        .mini-quiz {
+            background: var(--gold);
+            color: var(--deep-blue);
+            padding: 0.3rem;
+            border-radius: 4px;
+            font-size: 0.6rem;
+            font-weight: 600;
+        }
+
+        /* Writing Section */
+        .writing-content {
+            text-align: center;
+        }
+
+        .writing-prompt {
+            color: var(--deep-blue);
+            font-size: 0.65rem;
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+        }
+
+        .writing-area {
+            background: var(--light-cream);
+            padding: 0.4rem;
+            border-radius: 6px;
+            font-size: 0.6rem;
+            color: var(--dark-text);
+            line-height: 1.2;
+            min-height: 40px;
+            display: flex;
+            align-items: center;
+            font-style: italic;
+        }
+
+        /* Speaking Section */
+        .speaking-content {
+            text-align: center;
+        }
+
+        .pronunciation-word {
+            background: var(--deep-blue);
+            color: var(--off-white);
+            padding: 0.3rem;
+            border-radius: 6px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+        }
+
+        .phonetic-text {
+            color: var(--gold);
+            font-size: 0.6rem;
+            font-family: 'Courier New', monospace;
+            margin-bottom: 0.3rem;
+        }
+
+        .mini-audio-wave {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            gap: 2px;
+            height: 20px;
+        }
+
+        .mini-wave-bar {
+            background: var(--gold);
+            width: 2px;
+            border-radius: 1px;
+            animation: miniWave 1.5s ease-in-out infinite;
+        }
+
+        .mini-wave-bar:nth-child(1) { height: 8px; animation-delay: 0s; }
+        .mini-wave-bar:nth-child(2) { height: 15px; animation-delay: 0.1s; }
+        .mini-wave-bar:nth-child(3) { height: 10px; animation-delay: 0.2s; }
+        .mini-wave-bar:nth-child(4) { height: 18px; animation-delay: 0.3s; }
+        .mini-wave-bar:nth-child(5) { height: 6px; animation-delay: 0.4s; }
+
+        @keyframes miniWave {
+            0%, 100% { transform: scaleY(1); }
+            50% { transform: scaleY(0.5); }
+        }
+
+        /* Listening Section */
+        .listening-content {
+            text-align: center;
+        }
+
+        .mini-audio-player {
+            background: var(--deep-blue);
+            color: var(--off-white);
+            padding: 0.4rem;
+            border-radius: 6px;
+            margin-bottom: 0.4rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .mini-play-button {
+            width: 16px;
+            height: 16px;
+            background: var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--deep-blue);
+            font-size: 0.6rem;
+        }
+
+        .mini-audio-info {
+            flex: 1;
+            text-align: left;
+        }
+
+        .mini-audio-title {
+            font-size: 0.6rem;
+            font-weight: 600;
+        }
+
+        .mini-audio-time {
+            font-size: 0.5rem;
+            opacity: 0.7;
+        }
+
+        .mini-listening-question {
+            background: var(--gold);
+            color: var(--deep-blue);
+            padding: 0.3rem;
+            border-radius: 4px;
+            font-size: 0.6rem;
+            font-weight: 600;
+        }
+
+        .screenshot-title {
+            text-align: center;
+            color: var(--deep-blue);
+            font-weight: 600;
+            margin-top: 1.5rem;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="showcase-container">
+        <div class="phone-mockup">
+            <div class="screen">
+                <div class="header">
+                    <div class="header-title">Master All Four Skills</div>
+                    <div class="header-subtitle">Complete English Learning</div>
+                </div>
+                
+                <div class="skills-container">
+                    <!-- Reading Skill -->
+                    <div class="skill-section">
+                        <div class="skill-header">
+                            <div class="skill-icon">📖</div>
+                            <div class="skill-title">Reading</div>
+                        </div>
+                        <div class="skill-content reading-content">
+                            <div class="mini-article">
+                                Climate change affects ecosystems worldwide...
+                            </div>
+                            <div class="mini-quiz">
+                                What's the main topic?
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Writing Skill -->
+                    <div class="skill-section">
+                        <div class="skill-header">
+                            <div class="skill-icon">✍️</div>
+                            <div class="skill-title">Writing</div>
+                        </div>
+                        <div class="skill-content writing-content">
+                            <div class="writing-prompt">Summary Task:</div>
+                            <div class="writing-area">
+                                "Renewable energy sources are becoming more affordable..."
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Speaking Skill -->
+                    <div class="skill-section">
+                        <div class="skill-header">
+                            <div class="skill-icon">🎤</div>
+                            <div class="skill-title">Speaking</div>
+                        </div>
+                        <div class="skill-content speaking-content">
+                            <div class="pronunciation-word">Innovation</div>
+                            <div class="phonetic-text">/ˌɪnəˈveɪʃən/</div>
+                            <div class="mini-audio-wave">
+                                <div class="mini-wave-bar"></div>
+                                <div class="mini-wave-bar"></div>
+                                <div class="mini-wave-bar"></div>
+                                <div class="mini-wave-bar"></div>
+                                <div class="mini-wave-bar"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Listening Skill -->
+                    <div class="skill-section">
+                        <div class="skill-header">
+                            <div class="skill-icon">🎧</div>
+                            <div class="skill-title">Listening</div>
+                        </div>
+                        <div class="skill-content listening-content">
+                            <div class="mini-audio-player">
+                                <div class="mini-play-button">▶</div>
+                                <div class="mini-audio-info">
+                                    <div class="mini-audio-title">Tech Talk</div>
+                                    <div class="mini-audio-time">1:45</div>
+                                </div>
+                            </div>
+                            <div class="mini-listening-question">
+                                Main point?
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="screenshot-title">Eshi - All Four English Skills</div>
+    </div>
+</body>
+</html>
