@@ -198,12 +198,10 @@ a {
     }
 
     .hero-text {
-        order: 2; /* Puts text after image on mobile, if desired, remove this for text first */
-    }
+        margin-bottom: 2rem; /* Added to create space between the text and the image below it */
+}
+    
     .hero-image {
-        order: 1; /* Puts image first on mobile */
-        margin-bottom: 2rem; /* Add some space below image on mobile */
-    }
 }
 
 /* --- How It Works Section --- */
