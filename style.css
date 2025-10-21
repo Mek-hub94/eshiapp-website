@@ -79,7 +79,7 @@ a {
 .navbar {
     background-color: var(--light-cream);
     color: var(--deep-blue);
-    padding: 0.75rem 2 rem;
+    padding: 0.75rem 2rem;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -140,7 +140,7 @@ a {
 
 .hero-brand-name {
     color: var(--gold);
-    font-weight: bolder 600;
+    font-weight: 700;
     font-size: 3rem;
     text-transform: uppercase;
     letter-spacing: 1.5px;
@@ -156,6 +156,7 @@ a {
 }
 
 .hero-text {
+    order: 1;
     flex: 1;
     max-width: 50%;
     text-align: left;
@@ -173,6 +174,7 @@ a {
 }
 
 .hero-image {
+    order: 2;
     flex: 1;
     max-width: 45%;
     display: flex;
